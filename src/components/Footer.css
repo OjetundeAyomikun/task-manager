@@ -1,0 +1,87 @@
+/* ==========================================
+   MOBILE DEFAULT (Bottom Navigation Bar)
+   ========================================== */
+.Footer {
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--bgColor);
+  padding: 0.35rem 0.5rem;
+  z-index: 100;
+}
+
+.Footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem; /* Downsized slightly for better proportion */
+  border-radius: 0.75rem;
+  color: var(--textColor);
+  gap: 0.25rem;
+  transition: background 0.2s ease, color 0.2s ease;
+  padding: 0.75rem 0.5rem;
+  text-decoration: none; 
+}
+
+.Footer a:hover,
+.Footer a.active {
+  background: var(--color);
+  cursor: pointer;
+}
+
+.Footer a span {
+  font-size: 0.875rem;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.Footer a.active span {
+  max-width: 80px;
+  opacity: 1;
+  margin-left: 0.25rem;
+}
+
+
+/* ==========================================
+   DESKTOP (Left Icon Rail for min-width: 768px)
+   ========================================== */
+@media (min-width: 768px) {
+  .Footer {
+    top: 40px; /* Position below header */
+    bottom: auto;
+    left: 0;
+    width: 68px; /* Fixed width for clean icon rail */
+    height: calc(100vh - 40px);
+    position: fixed;
+    z-index: 10;
+    
+    /* Layout styling */
+    grid-template-columns: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center icons horizontally */
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .Footer a {
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+    padding: 0;
+  }
+
+  /* Completely hide text labels on desktop for clean icon rail */
+  .Footer a span {
+    display: none !important;
+  }
+}
