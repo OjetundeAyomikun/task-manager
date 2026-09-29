@@ -1,0 +1,8 @@
+{
+  "short_name": "Task Manager",
+  "name": "1/3 Portfoilo Project",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

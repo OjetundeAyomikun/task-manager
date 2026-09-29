@@ -1,0 +1,73 @@
+:root {
+  --textColor: #054e66;
+  --bgColor: #c7e2ea;
+  --color: rgb(255, 255, 255);
+  --cardBg: #ffffff;
+  --progress: #005472;
+  --complete: #07644d;
+}
+
+ [data-theme='dark']  {
+  --textColor: #e0f2fe;   
+  --bgColor: #0b1920;    
+  --color: #11222c;       
+  --cardBg: #1a2f3b;     
+  --progress: #0284c7;   
+  --complete: #10b981;  
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App{
+  position: relative;
+  background: var(--color);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.Footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  background: var(--bgColor);
+}
+.Footer div{
+  flex: .5;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  color: var(--textColor);
+  gap: 0.25rem;
+  transition: background 0.2s ease;
+  padding: 1.25rem 1rem;
+}
+.Footer div:hover{
+  background: var(--color);
+  cursor: pointer;
+}
+.Footer div span{
+  font-size: large;
+  transform: scaleX(0);
+  width: 0;
+  transform-origin: left;
+  transition: all 0.2s ease;
+}
+.Footer div.active{
+  background: var(--color);
+  cursor: pointer;
+}
+.Footer div.active span{
+  width: 50%;
+  transform: scaleX(1);
+}
