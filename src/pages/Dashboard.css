@@ -1,0 +1,120 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  padding: 0 .75rem;
+  overflow: hidden;
+}
+
+
+.task-summary {
+  flex-shrink: 0;
+  height: auto;
+  padding: 1rem;
+}
+
+.p {
+  color: var(--textColor);
+  font-weight: 500;
+  padding: 0 1rem;
+}
+
+.task-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin-top: 0.5rem;
+}
+
+.task-status .task-pending, 
+.task-status .task-completed {
+  background: linear-gradient(to top, var(--bgColor), var(--progress));
+  height: 8rem;
+  width: 13rem;
+  padding: 2rem 1.5rem;
+  color: white;
+  border-radius: 2rem;
+  box-shadow: 0 0 0.5rem 0.2rem var(--progress);
+}
+
+.task-status .task-pending span, 
+.task-status .task-completed span {
+  display: block;
+}
+
+.task-status .task-pending span.task-number, 
+.task-status .task-completed span.task-number {
+  font-size: larger;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-status .task-completed {
+  box-shadow: 0 0 0.5rem 0.2rem var(--complete);
+  background: linear-gradient(to top, var(--bgColor), var(--complete));
+}
+
+.task-status .task-pending span.task-number span, 
+.task-status .task-completed span.task-number span {
+  border-radius: 50%;
+  color: var(--color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+}
+
+.task-status .task-pending span.task-number span:hover, 
+.task-status .task-completed span.task-number span:hover {
+  color: var(--textColor);
+}
+
+
+.tasks {
+  flex: 1;
+  overflow-y: auto; 
+  overflow-x: hidden;
+  padding: 1rem;
+  padding-bottom: 5rem; 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+/* Standard CSS (Firefox & Modern Browsers) */
+  scrollbar-width:thin;
+  /* Scrollbar Thumb = accent color, Track = transparent or background color */
+  scrollbar-color: var(--color, rgba(255, 255, 255, 0.2)) transparent; 
+}
+
+/* WebKit-Based Browsers (Chrome, Edge, Safari) */
+.tasks::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tasks::-webkit-scrollbar-track {
+  background: transparent; /* Or var(--bgColor) */
+}
+
+.tasks::-webkit-scrollbar-thumb {
+  background: var(--color, rgba(255, 255, 255, 0.2)); /* Uses active theme color */
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.tasks::-webkit-scrollbar-thumb:hover {
+  background: var(--textColor); /* Brightens when hovered */
+}
+@media (min-width: 768px) {
+  .dashboard-container {
+    margin-left: 88px; 
+    width: calc(100% - 88px);
+    position: static; 
+  }
+
+  .task-status {
+    gap: 3rem;
+    justify-content: flex-start;
+  }
+}

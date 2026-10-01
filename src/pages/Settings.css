@@ -1,0 +1,226 @@
+.settings-container {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-bottom: 6rem; /* Extra space for footer */
+}
+
+.settings-header {
+    color: var(--textColor);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.settings-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.section-title {
+    color: var(--textColor);
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Settings Cards */
+.settings-card {
+    background-color: var(--cardBg, rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Profile Card Specifics */
+.profile-card {
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.profile-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--textColor);
+    color: var(--bgColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.profile-info h3 {
+    color: var(--textColor);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.profile-info p {
+    color: var(--textColor);
+    opacity: 0.6;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+/* Interactive Item Cards */
+.setting-item {
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.setting-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.setting-item:active {
+    transform: scale(0.99);
+}
+
+.item-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--textColor);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.icon-accent {
+    color: var(--textColor);
+}
+
+/* Custom Toggle Switch */
+.toggle-switch {
+    width: 44px;
+    height: 24px;
+    background: var(--bgColor);
+    border-radius: 12px;
+    padding: 2px;
+    transition: background 0.3s ease;
+}
+
+.toggle-switch.active {
+    background: var(--progress, #0284c7);
+}
+
+.toggle-handle {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch.active .toggle-handle {
+    transform: translateX(20px);
+}
+
+
+.setting-item.danger .item-label {
+    color: #ef4444;
+}
+
+.badge-count {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.version-text {
+    color: var(--textColor);
+    opacity: 0.5;
+    font-size: 0.85rem;
+}
+
+
+.name-display-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.edit-icon {
+    font-size: 0.75rem;
+    color: var(--textColor);
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.name-edit-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.name-edit-group input {
+    background: transparent;
+    border: 1px solid var(--textColor);
+    color: var(--textColor);
+    border-radius: 0.4rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.save-name-btn {
+    background: var(--textColor);
+    color: var(--bgColor);
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
+.accent-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.color-swatches {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    width: 100%;
+}
+
+.swatch {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.swatch:hover {
+    transform: scale(1.1);
+}
+
+.swatch.selected {
+    box-shadow: 0 0 0 2px var(--bgColor), 0 0 0 4px var(--textColor);
+}
+@media (min-width: 768px) {
+  .settings-container {
+    margin-left: 88px;
+    width: calc(100% - 88px);
+    position: static;
+    max-width: 900px;
+    padding: 1rem 1.5rem;
+  }
+}
