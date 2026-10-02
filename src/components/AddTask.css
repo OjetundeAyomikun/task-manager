@@ -1,0 +1,122 @@
+.prompt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.prompt {
+  height: auto;
+  width: 85%;
+  max-width: 400px;
+  background: var(--bgColor);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  z-index: 200;
+}
+
+.prompt .title, 
+.prompt .desc, 
+.prompt .priority {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.prompt p, 
+.prompt label {
+  color: var(--textColor);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.prompt input,
+.prompt textarea,
+.prompt select {
+  outline: none;
+  background: transparent;
+  border: 1px solid var(--textColor);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  color: var(--textColor);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.prompt textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+.prompt input:focus, 
+.prompt textarea:focus, 
+.prompt select:focus {
+  border-color: var(--textColor);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+}
+
+.prompt input::placeholder,
+.prompt textarea::placeholder {
+  color: var(--textColor);
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+
+.prompt select option {
+  background-color: var(--bgColor);
+  color: var(--textColor);
+  font-size: 0.9rem;
+}
+
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.buttons div {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: var(--textColor);
+  color: var(--bgColor); 
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.buttons div.cancel {
+  background: transparent;
+  color: var(--textColor);
+  border: 1px solid var(--textColor);
+}
+
+.buttons div:hover {
+  opacity: 0.9;
+}
+
+.buttons div:active {
+  transform: scale(0.98);
+}
